@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-04-14T11:37:32 IST" name="Default suite" finished-at="2023-04-14T11:37:47 IST" duration-ms="14427">
+    <groups>
+    </groups>
+    <test started-at="2023-04-14T11:37:32 IST" name="Default test" finished-at="2023-04-14T11:37:47 IST" duration-ms="14427">
+      <class name="com.android.test.MyTestSuite">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.android.test.MyTestSuite@1a4927d6]" started-at="2023-04-14T11:37:22 IST" name="init" finished-at="2023-04-14T11:37:32 IST" duration-ms="9919" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="TC001()[pri:0, instance:com.android.test.MyTestSuite@1a4927d6]" started-at="2023-04-14T11:37:32 IST" name="TC001" finished-at="2023-04-14T11:37:47 IST" duration-ms="14371" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC001 -->
+      </class> <!-- com.android.test.MyTestSuite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
