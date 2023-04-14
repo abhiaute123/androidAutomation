@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import io.appium.java_client.AppiumBy;
@@ -67,10 +68,28 @@ public class BaseClass {
 	
 	public void swipeToElement(String elementText) {
 		//driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable().instance(true))"+".scrollIntoView(new UiSelector()"+".textMatches(/"+"elementText"+"\").instance(0))"));
-	
-		WebElement element=driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView("+
-						   "new UiSelector().text(\""+elementText+
-						   "\").instance(0))"));
+		WebElement element;
+		try {
+			element=driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView("+
+							   "new UiSelector().text(\""+elementText+
+							   "\").instance(0))"));
+		} catch (Exception e) {
+			element=driver.findElement(new AppiumBy.ByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView("+
+					   "new UiSelector().text(\""+elementText+
+					   "\").instance(0))"));
+		}
 		
+		
+	}
+	
+	
+	@AfterSuite
+	public void tearDown() {
+		driver.quit();
+	}
+	
+	
+	public void navigateBack() {
+		driver.navigate().back();
 	}
 }

@@ -40,5 +40,10 @@ public class HomePage extends BaseClass implements HomePageLocator{
 		waitforElementToVisible(PAGE_TITLE);
 	}
 	
+	public void clickOnMenu(String menu) {
+		WebElement element=driver.findElement(By.xpath(String.format(MENU, menu)));
+		element.click();
+	}
+	
 	
 }
